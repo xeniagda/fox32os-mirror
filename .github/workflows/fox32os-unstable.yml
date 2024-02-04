@@ -12,56 +12,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
         with:
-          submodules: true
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Download latest fox32asm artifact
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          repo: fox32-arch/fox32asm
-          workflow: fox32asm-unstable-linux.yml
-          workflow_conclusion: success
+      - name: Build fox32os
+        run: nix build -L .#fox32os -o result-fox32os
 
-      - name: Download latest fox32rom artifact
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          repo: fox32-arch/fox32rom
-          workflow: fox32rom-unstable.yml
-          workflow_conclusion: success
-
-      - name: Download latest tools artifact
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          repo: fox32-arch/tools
-          workflow: tools-unstable-linux.yml
-          workflow_conclusion: success
-
-      - name: Install lua5.4
-        run: |
-          sudo apt update
-          sudo apt install -y lua5.4
-
-      - name: Build
-        run: |
-          mkdir ../fox32rom
-          cp fox32rom.def/fox32rom.def ../fox32rom/
-          chmod +x fox32asm/fox32asm gfx2inc/gfx2inc
-          make FOX32ASM=fox32asm/fox32asm GFX2INC=gfx2inc/gfx2inc
+      - name: Build fox32os-dev
+        run: nix build -L .#fox32os-dev -o result-fox32os-dev
 
       - name: Upload fox32os.img
         uses: actions/upload-artifact@v3
         with:
           name: fox32os.img
-          path: fox32os.img
+          path: result-fox32os/bin/fox32os.img
 
       - name: Upload romdisk.img
         uses: actions/upload-artifact@v3
         with:
           name: romdisk.img
-          path: romdisk.img
+          path: result-fox32os/bin/romdisk.img
 
       - name: Upload fox32os.def
         uses: actions/upload-artifact@v3
         with:
           name: fox32os.def
-          path: fox32os.def
+          path: result-fox32os-dev/dev/fox32os.def
