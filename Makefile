@@ -1,7 +1,7 @@
-RYFS := $(CURDIR)/meta/ryfs/ryfs.py
-FOX32ASM := ../fox32asm/target/release/fox32asm
-OKAMERON := $(CURDIR)/meta/okameron/okameron.lua
-GFX2INC := ../tools/gfx2inc/target/release/gfx2inc
+RYFS ?= $(CURDIR)/meta/ryfs/ryfs.py
+FOX32ASM ?= $(CURDIR)fox32asm/target/release/fox32asm
+OKAMERON ?= $(CURDIR)/meta/okameron/okameron.lua
+GFX2INC ?= $(CURDIR)/tools/gfx2inc/target/release/gfx2inc
 
 IMAGE_SIZE := 16777216
 ROM_IMAGE_SIZE := 65536

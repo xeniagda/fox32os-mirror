@@ -415,6 +415,6 @@ startup_bat_check_struct: data.fill 0, 32
 serial_stream: data.strz ":serial"
 serial_stream_struct: data.fill 0, 32
 
-    #include "../../fox32rom/fox32rom.def"
+    #include "../fox32rom/fox32rom.def"
 
 kernel_bottom:

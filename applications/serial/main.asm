@@ -67,5 +67,5 @@ stream_write_special:
     pop r0
     ret
 
-    #include "../../../fox32rom/fox32rom.def"
+    #include "../../fox32rom/fox32rom.def"
     #include "../../fox32os.def"

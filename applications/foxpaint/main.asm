@@ -392,5 +392,5 @@ is_drawing: data.8 0
 brush_size: data.8 4
 color: data.32 0xFFFFFFFF
 
-    #include "../../../fox32rom/fox32rom.def"
+    #include "../../fox32rom/fox32rom.def"
     #include "../../fox32os.def"

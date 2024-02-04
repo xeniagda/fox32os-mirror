@@ -110,5 +110,5 @@ button_text: data.strz "  "
 icons:
     #include "icons.inc"
 
-    #include "../../../fox32rom/fox32rom.def"
+    #include "../../fox32rom/fox32rom.def"
     #include "../../fox32os.def"

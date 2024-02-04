@@ -10,9 +10,9 @@ Stable releases are available on the [Releases page](https://github.com/fox32-ar
 
 Prebuilt images of the latest commit are also available on the [GitHub Actions page](https://github.com/fox32-arch/fox32os/actions).
 
-### Building
+### Building (without nix)
 
-- Download [tools](https://github.com/fox32-arch/tools) and [fox32asm](https://github.com/fox32-arch/fox32asm).
+- Download [tools](https://github.com/fox32-arch/tools) and [fox32asm](https://github.com/fox32-arch/fox32asm) into the current directory.
   Either use the pre-built binaries or build them.
 - Run `make`
 

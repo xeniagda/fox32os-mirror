@@ -336,5 +336,5 @@ shell_char_buffer: data.32 0
     #include "launch.asm"
 
     ; include system defs
-    #include "../../../fox32rom/fox32rom.def"
+    #include "../../fox32rom/fox32rom.def"
     #include "../../fox32os.def"

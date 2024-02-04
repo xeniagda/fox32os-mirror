@@ -65,5 +65,5 @@ menu_items_color_list:
     data.8 5 data.strz "Green" ; text length, text, null-terminator
     data.8 4 data.strz "Blue"  ; text length, text, null-terminator
 
-    #include "../../../fox32rom/fox32rom.def"
+    #include "../../fox32rom/fox32rom.def"
     #include "../../fox32os.def"
