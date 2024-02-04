@@ -12,3 +12,7 @@
 **/romdisk.img
 **/romdisk.img.tmp
 **/startup.bat
+
+**/result
+**/.direnv/
+fox32rom/
